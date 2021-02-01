@@ -1,3 +1,5 @@
+from django.conf import settings
+from django.core.mail import send_mail
 from rest_framework import serializers, status, mixins
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -30,7 +32,7 @@ class NewsApiView(APIView):
     serializer_class = NewsSerializer
 
     def get(self, request, *args, **kwargs):
-        articles = News.objects.filter(author=request.user)
+        articles = News.objects.filter()
         return Response(data=self.serializer_class(articles,
                                                    many=True).data)
 

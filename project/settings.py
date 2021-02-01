@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'lesson1',
-    'lesson2'
+    'lesson2',
+    'lesson3',
+    'lesson4',
 ]
 
 REST_FRAMEWORK = {
@@ -123,7 +125,14 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+#DataFlair
 
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "muratovkanat93@gmail.com"
+EMAIL_HOST_PASSWORD = "Admin123#"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
