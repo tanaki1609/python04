@@ -25,7 +25,7 @@ SECRET_KEY = '@o!9xc2*&81xn)rk6tiy#n0raf2!gm4n=f7elulu@g3r6(grbv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -49,7 +49,19 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
     ),
+    'PAGE_SIZE': 10,
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'mega',
+#         'USER': 'admin',
+#         'PASSWORD': 'admin123',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

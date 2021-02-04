@@ -17,11 +17,14 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path
 from lesson4 import views
+from lesson5 import views as lesson5_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/register/', views.RegisterApiView.as_view()),
     path('api/v1/confirm/', views.ConfirmApiView.as_view()),
     path('api/v1/login/', views.LoginApiView.as_view()),
+    path('api/v1/reauth/', views.ReAuth.as_view()),
+    path('api/v1/news/', lesson5_views.NewsApiView.as_view()),
 
 ]
